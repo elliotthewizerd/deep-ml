@@ -14,6 +14,6 @@ def poly_term_derivative(c: float, x: float, n: float) -> torch.Tensor:
     """
     x = torch.tensor(float(x), requires_grad = True)
     loss = c*(x**n)
-    loss.backward()
+    loss.sum().backward()
     return x.grad
     pass
